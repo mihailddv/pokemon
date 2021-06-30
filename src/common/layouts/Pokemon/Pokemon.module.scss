@@ -1,0 +1,132 @@
+@import '../../../styles/component.scss';
+
+.picture {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  height: 300px;
+  margin-bottom: 30px;
+  padding: 0 50px;
+}
+
+.title {
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.stats {
+  margin-bottom: 20px;
+
+  table {
+    border-collapse: collapse;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  th {
+    color: #fff;
+    text-align: left;
+    background: #6c7ae0;
+  }
+
+  th,
+  td {
+    min-width: 100px;
+    padding: 10px 15px;
+  }
+
+  td {
+    background: #f8f8f8;
+  }
+}
+
+.stat {
+  &Name {
+    text-transform: capitalize;
+  }
+}
+
+.special {
+  position: relative;
+  margin: 0 auto;
+
+  &Title {
+    margin-bottom: 10px;
+  }
+
+  &Item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+
+    &:not(:last-child) {
+      margin-bottom: 4px;
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &Info {
+    @include flex-center;
+
+    position: relative;
+    margin-left: 8px;
+
+    &:hover {
+      .specialTooltip {
+        display: block;
+      }
+    }
+  }
+
+  &Tooltip {
+    @include box-shadow;
+
+    display: none;
+    position: absolute;
+    width: 250px;
+    padding: 15px;
+    top: 25px;
+    left: -25%;
+    background: #fff;
+    border-radius: 4px;
+    transform: translateX(-50%);
+    z-index: 10;
+    text-transform: initial;
+  }
+}
+
+.compare {
+  display: flex;
+  justify-content: center;
+}
+
+.main {
+  margin-bottom: 20px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@include desktop {
+  .pokemon {
+    display: flex;
+    justify-content: center;
+  }
+
+  .picture {
+    width: 400px;
+
+    img {
+      width: 100%;
+    }
+  }
+}

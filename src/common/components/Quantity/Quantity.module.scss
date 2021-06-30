@@ -1,0 +1,33 @@
+@import '../../../styles/component.scss';
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.item {
+  @include box-shadow;
+
+  position: relative;
+  height: 34px;
+  width: 34px;
+  margin-left: 10px;
+  background: #fff;
+  border-radius: 4px;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: 0.3s cubic-bezier(0, 0, 0.2, 1);
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.text {
+  @include flex-center;
+}
+
+.active {
+  background: $primary-color;
+  color: #fff;
+}

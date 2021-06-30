@@ -1,0 +1,152 @@
+@import '../../../styles/component.scss';
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  overflow-x: scroll;
+}
+
+.table {
+  border-collapse: collapse;
+  border-radius: 4px;
+
+  tbody {
+    border: 1px solid #ccc;
+  }
+
+  thead {
+    border: 1px solid #6c7ae0;
+  }
+
+  th {
+    color: #fff;
+    text-align: left;
+    background: #6c7ae0;
+    font-weight: normal;
+
+    &:not(:first-child) {
+      text-align: center;
+    }
+  }
+
+  tr {
+    &:nth-child(2n) {
+      background: #eee;
+    }
+
+    td {
+      &:not(:first-child) {
+        text-align: center;
+      }
+
+      &:last-child {
+        text-align: right;
+      }
+    }
+  }
+
+  th,
+  td {
+    text-transform: capitalize;
+    min-width: 100px;
+    padding: 10px 15px;
+
+    button {
+      text-transform: inherit;
+      font-size: inherit;
+    }
+  }
+}
+
+.itemImage {
+  @include flex-center;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+
+  img {
+    width: 100%;
+  }
+}
+
+.btnDelete {
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  transition: 0.3s;
+
+  svg {
+    width: 20px;
+    height: 20px;
+
+    polygon {
+      transition: 0.3s;
+    }
+  }
+
+  &:hover {
+    svg {
+      polygon {
+        fill: red;
+      }
+    }
+  }
+}
+
+.sort {
+  &Text {
+    flex: 1;
+  }
+
+  &Btn {
+    @include flex-center;
+
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+
+    &:hover {
+      svg {
+        path {
+          fill: #22ff94;
+        }
+      }
+    }
+
+    &Active {
+      color: #22ff94;
+      cursor: default;
+
+      .sortIcon svg {
+        transform: rotate(-180deg);
+
+        path {
+          fill: #22ff94;
+        }
+      }
+    }
+  }
+
+  &Icon {
+    margin-left: 8px;
+    margin-top: -2px;
+    width: 12px;
+    height: 12px;
+
+    svg {
+      path {
+        fill: #fff;
+      }
+    }
+  }
+}
+
+
+@include desktop {
+  .container {
+    overflow: initial;
+  }
+}
